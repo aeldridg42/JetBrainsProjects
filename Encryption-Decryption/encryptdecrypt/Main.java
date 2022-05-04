@@ -38,12 +38,11 @@ public class Main {
                 default: exit(args[i]);
             }
         }
-
         if (in != -1) {
             BufferedReader br = new BufferedReader(new FileReader(args[in]));
-            while (br.ready())
+            while (br.ready()) {
                 text += br.readLine();
-            writer.close();
+            }
             br.close();
         }
         if (out != -1)
@@ -53,7 +52,6 @@ public class Main {
         helper.getCryptographyInstance(shift, writer).cypher();
 
         writer.close();
-
     }
 
     public static void exit() {
